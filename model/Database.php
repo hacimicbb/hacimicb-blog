@@ -7,16 +7,17 @@ class Database {
     private $username;
     private $password;
     private $database;
+    public $error;
 
     public function __construct($host, $username, $password, $database) {
         $this->host = $host;
         $this->username = $username;
-        $this->password = $database;
+        $this->password = $password ;
         $this->database = $database;
 
         $this->connection = new mysqli($host, $username, $password);
 
-        if ($connection->connect_error) {
+        if ($this->connection->connect_error) {
             die("<p>Error: " . $this->connection->connect_error . "</p>");
         }
 
@@ -37,7 +38,7 @@ class Database {
         $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
 
         if ($this->connection->connect_error) {
-            die("<p>Error: " . $this - $connection->connect_error . "</p>");
+            die("<p>Error: " . $this->connection->connect_error . "</p>");
         }
     }
 
@@ -52,6 +53,10 @@ class Database {
 
         $query = $this->connection->query($string);
 
+        if (!$query){
+            $this->error = $this->connection->error;
+        }
+        
         $this->closeConnection();
 
         return $query;
