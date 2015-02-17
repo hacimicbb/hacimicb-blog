@@ -1,6 +1,10 @@
+<?php
+    require_once(__DIR__ . "/../model/config.php");
+?>
+
 <h1>Register</h1>
 
-<form>
+<form method="post" action="">
     <div>
         <label for="email"></label>
         <input type="text" name="email" />
