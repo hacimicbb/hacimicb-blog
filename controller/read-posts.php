@@ -15,3 +15,4 @@
             echo "</div>";
         }
     }
+    /* This is the writing code that opens up when you run the regular project. */

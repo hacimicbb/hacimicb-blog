@@ -1,6 +1,6 @@
 <?php
     require_once(__DIR__ . "/../model/config.php");
-    
+    /* This is filtering the email, username and password. */ 
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
     $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
@@ -14,7 +14,7 @@
             . "username = '$username',"
             . "password = '$hashedPassword',"
             . "salt = '$salt'");
-    
+    /* This is for/when the user registers into the blog.*/
     if($query){
         echo "Successfully created user: $username";
     }

@@ -5,7 +5,7 @@
     $post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
     
     $query = $_SESSION["connection"]->query("INSERT INTO posts SET title = '$title', post = '$post'");
-    
+    /* This it the title and its self post code. */
     if($query) {
         echo "<p>Successfully inserted post: $title</p>";
     }   

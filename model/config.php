@@ -14,3 +14,4 @@
         $connection = new Database($host, $username, $password, $database);
         $_SESSION["connection"] = $connection;
     }
+    /* This is the connection to the database? */

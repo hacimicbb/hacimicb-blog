@@ -1,6 +1,6 @@
 <?php
     require_once(__DIR__ . "/../model/config.php");
-/* This is     
+/* This is the code that lets the user to logout. */    
     unset($_SESSION["authenticated"]);
     
     session_destroy();
