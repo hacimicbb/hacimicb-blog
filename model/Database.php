@@ -14,7 +14,7 @@ class Database {
         $this->username = $username;
         $this->password = $password ;
         $this->database = $database;
-
+/* The main code for (host, username, password, database. */
         $this->connection = new mysqli($host, $username, $password);
 
         if ($this->connection->connect_error) {
@@ -33,6 +33,8 @@ class Database {
             echo "Database already exists.";
         }
     }
+    
+    /* This is the database code page as it stores most of the information for the first page. */
 
     public function openConnection() {
         $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
@@ -63,3 +65,4 @@ class Database {
     }
 
 }
+/* Public function is to check the open connection/closed connection. */
